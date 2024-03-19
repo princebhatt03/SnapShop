@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  font-family: 'Roboto', sans-serif;
+}
+li {
+  list-style: none;
+}
+.Logo-Img {
+  width: 60px;
+}
+a {
+  text-decoration: none;
+}
+.header {
+  border-bottom: 1px solid #e2e8f0;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  position: fixed;
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #475569;
+  z-index: 9;
+  background: white;
+}
+.hamburger {
+  display: none;
+}
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #f07423;
+}
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-item {
+  margin-left: 5rem;
+}
+.nav-link {
+  font-size: 1.6rem;
+  font-weight: 400;
+  transition: all linear 0.4s;
+  color: #f07423;
+}
+.nav-link:hover {
+  color: #0fb1ea;
+}
+/* .nav-logo {
+  font-size: 2.1rem;
+  font-weight: 500;
+  color: #482ff7;
+} */
+#page1 {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+#page2 {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+#page3 {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+#page4 {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+.swiper {
+  position: absolute;
+  z-index: 1;
+  top: 1%;
+  left: 50%;
+  transform: translate(-50%, 10%);
+  width: 100%;
+  height: 90%;
+}
+
+.swiper-slide {
+  background-size: cover;
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  object-fit: cover;
+}
+.text-container {
+  text-align: left;
+  top: 30%;
+  left: 10%;
+  z-index: 9;
+  position: absolute;
+}
+.text-container h1 {
+  text-align: left;
+  padding: 5px 0;
+  font-size: 35px;
+  letter-spacing: 1px;
+  color: #f07423;
+}
+.text-container h3 {
+  text-align: left;
+  font-size: 20px;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  letter-spacing: 1px;
+  color: #094459;
+}
+.btn1 {
+  border-radius: 4px;
+  background-color: #f7ce26;
+  border: none;
+  color: #094459;
+  text-align: center;
+  font-size: 25px;
+  padding: 16px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px 0;
+  box-shadow: 0 10px 20px -8px rgba(0, 0, 0, 0.7);
+}
+
+.btn1 {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.btn1:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;
+  top: 14px;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.btn1:hover {
+  padding-right: 24px;
+  padding-left: 8px;
+}
+
+.btn1:hover:after {
+  opacity: 1;
+  right: 10px;
+}
+@media only screen and (max-width: 768px) {
+  .nav-menu {
+    position: fixed;
+    z-index: 1;
+    left: -100%;
+    top: 10rem;
+    flex-direction: column;
+    background-color: #fff;
+    width: 100%;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .nav-item {
+    margin: 2.5rem 0;
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+  }
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  .text-container {
+    text-align: left;
+    top: 30%;
+    left: 10%;
+    z-index: 9;
+    position: absolute;
+  }
+  .text-container h1 {
+    text-align: left;
+    padding: 5px 0;
+    font-size: 30px;
+    letter-spacing: 1px;
+    color: #f07423;
+  }
+  .text-container h3 {
+    text-align: left;
+    font-size: 15px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    letter-spacing: 1px;
+    color: #094459;
+  }
+  .btn1 {
+    border-radius: 4px;
+    background-color: #f7ce26;
+    border: none;
+    color: #094459;
+    text-align: center;
+    font-size: 15px;
+    padding: 14px 0;
+    width: 150px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px 0;
+    box-shadow: 0 10px 20px -8px rgba(0, 0, 0, 0.7);
+  }
+}
