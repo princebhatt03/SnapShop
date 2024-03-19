@@ -61,6 +61,20 @@ a {
 .nav-link:hover {
   color: #0fb1ea;
 }
+.nav1 {
+  display: flex;
+  float: right;
+  right: calc(25% + 15px);
+  position: fixed;
+}
+.nav1 a {
+  color: #f07423;
+  font-size: 1.9rem;
+  transition: all linear 0.3s;
+}
+.nav1 a:hover {
+  color: #0fb1ea;
+}
 /* .nav-logo {
   font-size: 2.1rem;
   font-weight: 500;
@@ -116,10 +130,14 @@ a {
   object-fit: cover;
 }
 .text-container {
+  width: auto;
   text-align: left;
   top: 30%;
-  left: 10%;
+  border-radius: 10px;
+  left: 5%;
+  padding: 10px;
   z-index: 9;
+  background-color: rgba(0, 0, 0, 0.5);
   position: absolute;
 }
 .text-container h1 {
@@ -135,7 +153,7 @@ a {
   padding-top: 5px;
   padding-bottom: 10px;
   letter-spacing: 1px;
-  color: #094459;
+  color: #0fb1ea;
 }
 .btn1 {
   border-radius: 4px;
@@ -177,6 +195,30 @@ a {
   opacity: 1;
   right: 10px;
 }
+@media screen and (max-width: 900px) {
+  .nav1 {
+    display: flex;
+    float: right;
+    right: 50%;
+    position: fixed;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .nav1 {
+    display: flex;
+    float: right;
+    right: 40%;
+    position: fixed;
+  }
+}
+@media screen and (max-width: 1300px) {
+  .nav1 {
+    display: flex;
+    float: right;
+    right: 45%;
+    position: fixed;
+  }
+}
 @media only screen and (max-width: 768px) {
   .nav-menu {
     position: fixed;
@@ -191,7 +233,12 @@ a {
     transition: 0.3s;
     box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
   }
-
+  .nav1 {
+    display: flex;
+    float: right;
+    right: 17%;
+    position: absolute;
+  }
   .nav-menu.active {
     left: 0;
   }
@@ -218,24 +265,24 @@ a {
   .text-container {
     text-align: left;
     top: 30%;
-    left: 10%;
+    left: 5%;
     z-index: 9;
     position: absolute;
   }
   .text-container h1 {
     text-align: left;
     padding: 5px 0;
-    font-size: 30px;
-    letter-spacing: 1px;
+    font-size: 20px;
+    letter-spacing: 2px;
     color: #f07423;
   }
   .text-container h3 {
     text-align: left;
-    font-size: 15px;
+    font-size: 12px;
     padding-top: 5px;
     padding-bottom: 10px;
-    letter-spacing: 1px;
-    color: #094459;
+    letter-spacing: 2px;
+    color: #0fb1ea;
   }
   .btn1 {
     border-radius: 4px;
@@ -243,12 +290,12 @@ a {
     border: none;
     color: #094459;
     text-align: center;
-    font-size: 15px;
-    padding: 14px 0;
-    width: 150px;
+    font-size: 10px;
+    padding: 15px 0;
+    width: 100px;
     transition: all 0.5s;
     cursor: pointer;
-    margin: 5px 0;
+    margin: 6px 0;
     box-shadow: 0 10px 20px -8px rgba(0, 0, 0, 0.7);
   }
 }
