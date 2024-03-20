@@ -22,90 +22,94 @@
       body {
         width: 100%;
         height: 100%;
-      }
-      #page1 {
-        width: 100%;
-        height: 100vh;
-        background-color: #0fb1ea;
-      }
-      .page1-container {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        font-weight: bold;
         text-align: center;
+        background-color: #aedaa6;
       }
-      .page1-container h1 {
-        color: #f07423;
-        font-size: 25px;
+      h1 {
+        padding: 10px 0;
+      }
+      ul {
+        list-style: none;
+        padding: 10px 0;
+      }
+      p {
+        padding: 10px 0;
       }
       .inline-block {
-        display: inline-block;
+        padding: 10px 0;
+        display: inline-grid;
       }
-      .fa-face-grin-beam-sweat {
-        padding: 0 7px;
-      }
-      #btn1 {
-        border-radius: 4px;
-        background-color: #f7ce26;
+      #clear-cart-btn {
+        margin: 10px 0;
+        width: 100px;
+        font-size: 10px;
+        font-weight: bold;
+        height: 40px;
         border: none;
-        color: #094459;
-        text-align: center;
-        font-size: 20px;
-        padding: 16px;
-        width: 150px;
-        transition: all 0.5s;
-        cursor: pointer;
-        margin: 5px 0;
-        box-shadow: 0 10px 20px -8px rgba(0, 0, 0, 0.7);
+        border-radius: 5px;
+        background-color: #f07423;
+        color: black;
       }
-      #btn1 {
-        cursor: pointer;
-        display: inline-block;
-        position: relative;
-        transition: 0.5s;
-      }
-
-      #btn1:after {
-        content: '»';
-        position: absolute;
-        opacity: 0;
-        top: 14px;
-        right: -20px;
-        transition: 0.5s;
-      }
-
-      #btn1:hover {
-        padding-right: 24px;
-        padding-left: 8px;
-      }
-
-      #btn1:hover:after {
-        opacity: 1;
-        right: 10px;
+      .back-to-shopping-btn {
+        width: 100px;
+        font-size: 10px;
+        border-radius: 5px;
+        font-weight: bold;
+        height: 40px;
+        margin: 10px 0;
+        border: none;
+        background-color: #f7ce26;
+        color: black;
       }
     </style>
   </head>
   <body>
-    <div id="main">
-      <div id="page1">
-        <div class="page1-container">
-          <div class="inline-block">
-            <h1>
-              <i class="fa-solid fa-face-grin-beam-sweat"></i>Your Cart is
-              currently empty
-            </h1>
-            <button id="btn1">Add items</button>
-          </div>
-        </div>
-      </div>
+    <h1>Shopping Cart</h1>
+    <ul id="cart-items"></ul>
+    <p>Total: <span id="cart-total">$0</span></p>
+    <div class="inline-block">
+      <button id="clear-cart-btn">Clear Cart</button>
+      <button class="back-to-shopping-btn">Back to Shopping</button>
     </div>
+    <script src="script.js"></script>
     <script>
-      var btn = document.querySelector('#btn1');
-      btn.addEventListener('click', function open() {
+      document.addEventListener('DOMContentLoaded', function () {
+        const cartItemsElement = document.getElementById('cart-items');
+        const cartTotalElement = document.getElementById('cart-total');
+
+        let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+        let cartTotal = 0;
+
+        function displayCart() {
+          cartItemsElement.innerHTML = '';
+          cartTotal = 0;
+
+          cartItems.forEach(item => {
+            const cartItem = document.createElement('li');
+            cartItem.textContent = `${item.name} - $${item.price}`;
+            cartItemsElement.appendChild(cartItem);
+
+            cartTotal += parseFloat(item.price);
+          });
+
+          cartTotalElement.textContent = `$${cartTotal.toFixed(2)}`;
+        }
+
+        displayCart();
+
+        document
+          .getElementById('clear-cart-btn')
+          .addEventListener('click', function () {
+            cartItems = [];
+            localStorage.setItem('cart', JSON.stringify(cartItems));
+            displayCart();
+          });
+      });
+
+      var back = document.querySelector('.back-to-shopping-btn');
+      back.addEventListener('click', function () {
         window.location.href = 'index.html';
-        // alert('hello');
       });
     </script>
   </body>

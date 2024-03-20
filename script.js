@@ -49,3 +49,20 @@ function popUp() {
 
 // cart
 
+document.addEventListener('DOMContentLoaded', function () {
+  const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+
+  addToCartButtons.forEach(button => {
+    button.addEventListener('click', function () {
+      const name = button.dataset.name;
+      const price = parseFloat(button.dataset.price);
+      addToCart(name, price);
+    });
+  });
+
+  function addToCart(name, price) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.push({ name, price });
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }
+});
