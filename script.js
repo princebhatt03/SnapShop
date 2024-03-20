@@ -36,3 +36,16 @@ var swiper = new Swiper('.mySwiper', {
     prevEl: '.swiper-button-prev',
   },
 });
+
+// alerts
+
+function popUp() {
+  Swal.fire({
+    title: 'Added',
+    text: 'Item added to cart',
+    icon: 'success',
+  });
+}
+
+// cart
+
