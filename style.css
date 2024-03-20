@@ -91,12 +91,12 @@ a {
   position: relative;
   background-color: #aedaa6;
 }
-/* #page3 {
+#page3 {
   width: 100%;
-  height: 100vh;
+  height: auto;
   position: relative;
 }
-#page4 {
+/*#page4 {
   width: 100%;
   height: 100vh;
   position: relative;
@@ -339,24 +339,25 @@ nav {
   background-color: #f07423;
 }
 .container {
-  background-color: #efeae3;
-  height: 100vh;
+  background-color: #fff;
+  height: auto;
   width: 100%;
 }
 #movingDiv {
   white-space: nowrap;
   overflow-x: auto;
-  padding: 5vw 0;
+  padding: 0;
 }
 #movingDiv::-webkit-scrollbar {
   display: none;
 }
 #movingDiv img {
-  width: 30%;
+  width: 15%;
   aspect-ratio: 3/2;
+  padding: 0 3vw;
   object-fit: contain;
   mix-blend-mode: darken;
-  margin: 10px;
+  /* margin: 10px; */
   /* top: 10%; */
   position: relative;
   height: auto;
@@ -365,7 +366,7 @@ nav {
 .con {
   display: inline-block;
   white-space: nowrap;
-  animation: move 4s linear infinite;
+  animation: move 10s linear infinite;
 }
 @keyframes move {
   from {
@@ -563,6 +564,18 @@ nav {
   .btn3:hover {
     background-color: #f07423;
     color: black;
+  }
+  #movingDiv img {
+    width: 15%;
+    aspect-ratio: 3/2;
+    padding: 0 3vw;
+    object-fit: contain;
+    mix-blend-mode: darken;
+    /* margin: 10px; */
+    /* top: 10%; */
+    position: relative;
+    height: auto;
+    display: inline-block;
   }
 }
 @media screen and (max-width: 900px) {
