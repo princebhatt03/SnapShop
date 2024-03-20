@@ -338,6 +338,43 @@ nav {
 .btn3:hover {
   background-color: #f07423;
 }
+.container {
+  background-color: #efeae3;
+  height: 100vh;
+  width: 100%;
+}
+#movingDiv {
+  white-space: nowrap;
+  overflow-x: auto;
+  padding: 5vw 0;
+}
+#movingDiv::-webkit-scrollbar {
+  display: none;
+}
+#movingDiv img {
+  width: 30%;
+  aspect-ratio: 3/2;
+  object-fit: contain;
+  mix-blend-mode: darken;
+  margin: 10px;
+  /* top: 10%; */
+  position: relative;
+  height: auto;
+  display: inline-block;
+}
+.con {
+  display: inline-block;
+  white-space: nowrap;
+  animation: move 4s linear infinite;
+}
+@keyframes move {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
 
 @media only screen and (max-width: 768px) {
   .nav-menu {
