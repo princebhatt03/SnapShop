@@ -101,6 +101,7 @@ a {
   height: auto;
   position: relative;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
 }
 .swiper {
@@ -336,9 +337,11 @@ nav {
 }
 .btn2:hover {
   background-color: #f7ce26;
+  color: black;
 }
 .btn3:hover {
   background-color: #f07423;
+  color: black;
 }
 .container {
   background-color: #fff;
@@ -488,6 +491,10 @@ nav {
   top: -10px;
   bottom: -10px;
 }
+/* .image-item:hover {
+  background-color: red;
+  cursor: pointer;
+} */
 
 @media only screen and (max-width: 1023px) {
   .slider-wrapper .slide-button {
